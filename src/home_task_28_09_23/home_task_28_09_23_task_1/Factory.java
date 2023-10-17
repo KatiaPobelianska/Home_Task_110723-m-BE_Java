@@ -1,4 +1,4 @@
-package home_task_28_09_23_task_1;
+package home_task_28_09_23.home_task_28_09_23_task_1;
 
 public class Factory {
     // Метод для производства спорткара

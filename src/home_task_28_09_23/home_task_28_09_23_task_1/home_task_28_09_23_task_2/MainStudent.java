@@ -1,4 +1,4 @@
-package home_task_28_09_23_task_2;
+package home_task_28_09_23.home_task_28_09_23_task_1.home_task_28_09_23_task_2;
 
 public class MainStudent {
     public static void main(String[] args) {

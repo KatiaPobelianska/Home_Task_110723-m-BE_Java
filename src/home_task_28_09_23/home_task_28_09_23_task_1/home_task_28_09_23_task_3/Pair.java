@@ -1,4 +1,4 @@
-package home_task_28_09_23_task_3;
+package home_task_28_09_23.home_task_28_09_23_task_1.home_task_28_09_23_task_3;
 
 public class Pair {
     private String first;
