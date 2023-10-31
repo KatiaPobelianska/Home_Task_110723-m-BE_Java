@@ -1,5 +1,7 @@
 package home_task_23_10_23.task_2;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -9,26 +11,25 @@ import java.util.Queue;
 // Цикл заканчивается. Количество блинов, которые может съесть внук равно его возрасту.
 public class BreakfastAtGrandma {
     public static void main(String[] args) {
-        int ageOfGrandson = 5;
-        int pancakesEaten = 0;
+        int grandsonAge = 5; // Возраст внука (количество блинов, которые он может съесть)
 
-        Queue<String> pancakes = new LinkedList<>();
-
-        System.out.println("Begin of breakfast by grandma");
-        for (int i = 0; i < ageOfGrandson * 2; i++) {
-            pancakes.offer("Pancake#" + (i + 1));
+        Deque<String> pancakesStack = new ArrayDeque<>();
+        // Бабушка начинает жарить блинчики и добавляет их в стек
+        for (int i = 1; i <= grandsonAge; i++){
+            String pancake = "Блинчик " + i;
+            pancakesStack.push(pancake);
+            System.out.println("Бабушка приготовила и добавила " + pancake + " сверху на стопку");
         }
-//
-        while (pancakesEaten < ageOfGrandson) {
-            String pancake = pancakes.poll();
-            System.out.println("Grandson has eaten " + pancake);
-            pancakesEaten++;
-            if(pancakes.isEmpty()){
-                System.out.println("Grandma makes pancakes no more");
-                break;
+        // Внук начинает есть блинчики
+        while (!pancakesStack.isEmpty()){
+            String pancakeToEat = pancakesStack.pop();
+            System.out.println("Внук съел " + pancakeToEat);
+            if (!pancakesStack.isEmpty()) {
+                System.out.println("Внук возьмет следующий блинчик.");
+            } else {
+                System.out.println("Все блинчики съедены. Завтрак завершен.");
             }
         }
-
 
     }
 }
